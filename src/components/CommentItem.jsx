@@ -3,7 +3,7 @@ function CommentItem({ comment }) {
         <div className="comment-item">
             <iframe
                 src={`https://open.spotify.com/embed/track/${comment.track.spotifyTrackId}`}
-                width="300"
+                width="100%"
                 height="80"
                 frameBorder="0"
                 allow="encrypted-media"

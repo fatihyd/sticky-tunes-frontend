@@ -1,38 +1,142 @@
-.App {
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    background-color: #fffaf0;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Header */
+.App h1 {
+    color: #5d4037;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
     text-align: center;
+    margin: 20px 0;
+}
+
+/* Post list */
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
     padding: 20px;
 }
 
-.post-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
+/* Post-It Notes */
 .post-item,
 .comment-item {
-    background-color: #fffae6;
-    border: 1px solid #f0e6a8;
+    background-color: #fff9c4;
+    border: 1px solid #f0e68c;
     border-radius: 10px;
-    padding: 15px;
-    margin: 10px;
-    width: 320px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
 }
 
+/* Folded corner */
+.post-item::after,
+.comment-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 0 20px 20px;
+    border-style: solid;
+    border-color: transparent transparent #f0e68c transparent;
+}
+
+/* Text and date */
+.post-item p,
+.comment-item p {
+    color: #5d4037;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.post-item small,
+.comment-item small {
+    color: #8d6e63;
+}
+
+/* Spotify iframe */
+.post-item iframe,
+.comment-item iframe {
+    border-radius: 10px;
+    width: 100%;
+}
+
+/* Hover effect */
+.post-item:hover,
+.comment-item:hover {
+    transform: translateY(-5px);
+    transition: transform 0.2s;
+}
+
+/* Forms */
 .post-form,
 .comment-form {
-    margin: 20px;
+    background-color: #ffecb3;
+    border: 1px solid #ffe082;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 500px;
 }
 
+/* Input fields */
 .post-form input,
 .comment-form input,
 .post-form textarea,
 .comment-form textarea {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #d7ccc8;
+    border-radius: 10px;
+    background-color: #fffde7;
+    font-family: 'Nunito', sans-serif;
 }
 
+/* Placeholder text */
+.post-form input::placeholder,
+.comment-form input::placeholder,
+.post-form textarea::placeholder,
+.comment-form textarea::placeholder {
+    color: #a1887f;
+}
+
+/* Buttons */
 .post-form button,
 .comment-form button {
-    padding: 10px 20px;
+    background-color: #ffb74d;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.post-form button:hover,
+.comment-form button:hover {
+    background-color: #ffa726;
+}
+
+/* Transitions */
+button,
+.post-item,
+.comment-item,
+input,
+textarea {
+    transition: all 0.3s ease;
 }

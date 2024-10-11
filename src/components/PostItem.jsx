@@ -6,7 +6,7 @@ function PostItem({ post }) {
         <div className="post-item">
             <iframe
                 src={`https://open.spotify.com/embed/track/${post.track.spotifyTrackId}`}
-                width="300"
+                width="100%"
                 height="80"
                 frameBorder="0"
                 allow="encrypted-media"
