@@ -14,7 +14,7 @@ function App() {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get('http://localhost:5139/api/posts'); // Adjust the API URL as needed
+      const response = await axios.get('http://localhost:5250/api/posts'); // Adjust the API URL as needed
       setPosts(response.data);
     } catch (error) {
       console.error('Error fetching posts:', error);

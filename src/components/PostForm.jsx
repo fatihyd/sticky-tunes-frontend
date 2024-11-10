@@ -8,7 +8,7 @@ function PostForm({ addPost }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5139/api/posts', { spotifyUrl, text });
+            const response = await axios.post('http://localhost:5250/api/posts', { spotifyUrl, text });
             addPost(response.data);
             setSpotifyUrl('');
             setText('');
